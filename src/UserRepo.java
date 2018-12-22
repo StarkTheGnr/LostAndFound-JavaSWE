@@ -4,7 +4,43 @@ public class UserRepo
 	{
 		DatabaseHandler handler = DatabaseHandler.getInstance();
 		
-		handler.userDB.add(user);
+		boolean found = false;
+		for(int i = 0; i < handler.userDB.size(); i++)
+		{
+			if(handler.userDB.get(i).username.Equals(user.username))
+			{
+				handler.userDB.get(i).username = user.username;
+				handler.userDB.get(i).password = user.password;
+				handler.userDB.get(i).imgLocation = user.imgLocation;
+				handler.userDB.get(i).description = user.description;
+				
+				found = true;
+			}
+		}
+		
+		if(!found)
+			handler.userDB.add(user);
+		
+		return true;
+	}
+	public static boolean SaveUser(User user, User newUser)
+	{
+		DatabaseHandler handler = DatabaseHandler.getInstance();
+		
+		boolean found = false;
+		for(int i = 0; i < handler.userDB.size(); i++)
+		{
+			if(handler.userDB.get(i).username.Equals(user.username))
+			{
+				handler.userDB.get(i).username = newUser.username;
+				handler.userDB.get(i).password = newUser.password;
+				
+				found = true;
+			}
+		}
+		
+		if(!found)
+			handler.userDB.add(newUser);
 		
 		return true;
 	}
