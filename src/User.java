@@ -1,47 +1,48 @@
-package Entities;
+public class User
+{
+	private String userName;
+	private String password;
+	private String imageLocation;
+	private String description;
 
-public class User {
-	private String userName ;
-	private String password ;
-	private String imageLocation ;
-	private String dscribtion ;
-	
-	
 	public void setUserName(String UN)
 	{
-		userName = UN ;
+		userName = UN;
 	}
+
 	public String getUserName()
 	{
-		return userName ;
+		return userName;
 	}
-	
+
 	public void setpassword(String pass)
 	{
-		password = pass ;
+		password = pass;
 	}
+
 	public String getPassword()
 	{
-		return password ;
+		return password;
 	}
-	
+
 	public void setimageLocation(String imageLoc)
 	{
-		imageLocation = imageLoc ;
+		imageLocation = imageLoc;
 	}
+
 	public String getimageLocation()
 	{
-		return imageLocation ;
+		return imageLocation;
 	}
-	
-	public void setdscribtion(String disc)
+
+	public void setDescription(String disc)
 	{
-		dscribtion = disc ;
+		description = disc;
 	}
-	public String getdscribtion()
+
+	public String getDescription()
 	{
-		return dscribtion ;
+		return description;
 	}
-	
 
 }

@@ -1,52 +1,58 @@
-package Entities;
+public class Item
+{
+	private String category;
+	private String desc;
+	private String image;
+	private Location location;
+	private User foundBy;
 
-public class Item {
-	private String category ;
-	private String disc ;
-	private String image ;
-	private Location location ;
-	private User foundBy ;
-	
-	
 	public void setCategory(String cat)
 	{
-		category = cat ;
+		category = cat;
 	}
+
 	public String getCategory()
 	{
-		return category ;
+		return category;
 	}
-	
-	public void setDiscribtion(String discr)
+
+	public void setDescription(String descr)
 	{
-		disc = discr  ;
+		desc = descr;
 	}
-	public String setDiscribtion()
+
+	public String setDescription()
 	{
-		return disc ;
+		return desc;
 	}
+
 	public void setImage(String img)
 	{
-		image = img ;
+		image = img;
 	}
+
 	public String getImage()
 	{
-		return image ;
+		return image;
 	}
+
 	public void setLocation(Location loc)
 	{
-		location = loc ;
+		location = loc;
 	}
-	public String getLocation()
+
+	public Location getLocation()
 	{
-		return location ;
+		return location;
 	}
+
 	public void setFoundBy(User user)
 	{
-		foundBy = user ;
+		foundBy = user;
 	}
-	public String getFoundBy()
+
+	public User getFoundBy()
 	{
-		return foundBy ;
+		return foundBy;
 	}
 }
