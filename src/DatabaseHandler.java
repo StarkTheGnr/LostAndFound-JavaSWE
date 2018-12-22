@@ -7,7 +7,6 @@ public class DatabaseHandler
 	public ArrayList<User> userDB = new ArrayList<User>();
 	public ArrayList<Item> itemDB = new ArrayList<Item>();
 	public ArrayList<Message> msgDB = new ArrayList<Message>();
-	public ArrayList<Conversation> convDB = new ArrayList<Conversation>();
 	
 	private DatabaseHandler()
 	{
