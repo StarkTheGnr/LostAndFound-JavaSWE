@@ -21,7 +21,7 @@ public class UserService {
 	public boolean Update(String username, String password)
 	{
 		
-		if(server.Update(user.getUserName(), username, user.getPassword(), password))
+		if(server.Update(user.getUsername(), username, user.getPassword(), password))
 			return true;
 		else 
 			return false;
@@ -29,7 +29,7 @@ public class UserService {
 	
 	public boolean UploadInformation(String img, String desc)
 	{
-		this.user.setImage(img);
+		this.user.setimageLocation(img);
 		this.user.setDescription(desc);
 		if (server.Upload(this.user))
 			return true;

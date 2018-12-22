@@ -1,5 +1,6 @@
 
-public class ItemService {
+public class ItemService 
+{
 	Item item = new Item();
 	
 	ItemService(Item i)
@@ -19,12 +20,11 @@ public class ItemService {
 		temp.setDescription(desc);
 		temp.setImage(img);
 		temp.setLocation(loc);
-		temp.setUser(u);
+		temp.setFoundBy(u);
 		return temp;
 	}
 	public void Applyform(User u)
 	{
-		CreatConversation(this.item.getFoundBy(), u);
+		ServerFunctions.getInstance().CreateConversation(this.item, u);
 	}
-
 }
