@@ -1,12 +1,13 @@
+import java.util.ArrayList;
 
 public class DatabaseHandler
 {
 	public static DatabaseHandler db;
 	
-	public User[] userDB;
-	public Item[] itemDB;
-	public Message[] msgDB;
-	public Conversation[] convDB;
+	public ArrayList<User> userDB = new ArrayList<User>();
+	public ArrayList<Item> itemDB = new ArrayList<Item>();
+	public ArrayList<Message> msgDB = new ArrayList<Message>();
+	public ArrayList<Conversation> convDB = new ArrayList<Conversation>();
 	
 	private DatabaseHandler()
 	{
