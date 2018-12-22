@@ -13,6 +13,12 @@ public class DatabaseHandler
 		
 	}
 	
+	public boolean Connect(String connectionString)
+	{
+		//Connect to database
+		return true;
+	}
+	
 	public static DatabaseHandler getInstance()
 	{
 		if(db != null)
