@@ -45,4 +45,18 @@ public class ServerFunctions
 	{
 		ItemRepo.SaveItem(item);
 	}
+	public boolean Accept(Item item)
+	{
+		ItemRepo.RemoveItem(item.id);
+		return Viwer.EndConversation();
+	}
+	public boolean Decline(Item item)
+	{
+		return Viwer.EndConversation();
+	}
+	public void CreatConversation(Item item, User u)
+	{
+		Viwer.CreatConversation(item.getFoundby(), u);
+	}
+	
 }
