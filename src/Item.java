@@ -1,5 +1,6 @@
 public class Item
 {
+	public int id;
 	private String category;
 	private String desc;
 	private String image;

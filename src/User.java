@@ -1,21 +1,28 @@
 public class User
 {
-	private String userName;
+	private String username;
 	private String password;
 	private String imageLocation;
 	private String description;
-
-	public void setUserName(String UN)
+	
+	public User(String user, String pw)
 	{
-		userName = UN;
+		username = user;
+		password = pw;
+	}
+	public User() {}
+
+	public void setUsername(String UN)
+	{
+		username = UN;
 	}
 
-	public String getUserName()
+	public String getUsername()
 	{
-		return userName;
+		return username;
 	}
 
-	public void setpassword(String pass)
+	public void setPassword(String pass)
 	{
 		password = pass;
 	}

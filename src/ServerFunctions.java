@@ -43,20 +43,20 @@ public class ServerFunctions
 	
 	public boolean SaveItem(Item item)
 	{
-		ItemRepo.SaveItem(item);
+		return ItemRepo.SaveItem(item);
 	}
 	public boolean Accept(Item item)
 	{
 		ItemRepo.RemoveItem(item.id);
-		return Viwer.EndConversation();
+		return Viewer.EndConversation();
 	}
 	public boolean Decline(Item item)
 	{
-		return Viwer.EndConversation();
+		return Viewer.EndConversation();
 	}
-	public void CreatConversation(Item item, User u)
+	public void CreateConversation(Item item, User u)
 	{
-		Viwer.CreatConversation(item.getFoundby(), u);
+		Viewer.CreateConversation(item.getFoundBy(), u);
 	}
 	
 }

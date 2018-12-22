@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Conversation 
 {
@@ -7,11 +8,11 @@ public class Conversation
 	
 	public boolean Accept()
 	{
-		
+		return true;
 	}
 	public boolean Decline()
 	{
-		
+		return true;
 	}
 
 }

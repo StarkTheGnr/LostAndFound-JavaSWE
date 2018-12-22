@@ -9,9 +9,9 @@ public class ConversationRepo
 		
 		for(int i = 0; i < handler.msgDB.size(); i++)
 		{
-			if((handler.msgDB.get(i).from.Equals(from) || handler.msgDB.get(i).from.Equals(to)) && (handler.msgDB.get(i).to.Equals(from) || handler.msgDB.get(i).to.Equals(to)))
+			if((handler.msgDB.get(i).from.equals(from) || handler.msgDB.get(i).from.equals(to)) && (handler.msgDB.get(i).to.equals(from) || handler.msgDB.get(i).to.equals(to)))
 			{
-				result.Messages.add(handler.msgDB.get(i));
+				result.messages.add(handler.msgDB.get(i));
 			}
 		}
 		
