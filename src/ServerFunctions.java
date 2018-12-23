@@ -12,10 +12,11 @@ public class ServerFunctions
 			return instance = new ServerFunctions();
 	}
 	
-	public boolean Validate(String username, String password)
+	public boolean Validate(String username, String password) throws LoginException
 	{
 		if(username.length() > 18 || username.length() < 3 || password.length() > 18 || password.length() < 3)
-			return false;	
+			throw new LoginException("Login information invalid!");	
+		
 		return true;
 	}
 	
