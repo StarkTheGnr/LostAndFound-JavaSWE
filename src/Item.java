@@ -22,7 +22,7 @@ public class Item
 		desc = descr;
 	}
 
-	public String setDescription()
+	public String getDescription()
 	{
 		return desc;
 	}
