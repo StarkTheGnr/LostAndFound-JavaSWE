@@ -42,7 +42,7 @@ public class UserRepo
 		return true;
 	}
 
-	public static User LoadItem(String username)
+	public static User LoadUser(String username)
 	{
 		DatabaseHandler handler = DatabaseHandler.getInstance();
 

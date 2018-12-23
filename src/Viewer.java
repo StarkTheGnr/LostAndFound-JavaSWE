@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Viewer {
 	
 	public static Scanner input = new Scanner(System.in);
-	static ArrayList<Item>  Items = new ArrayList<Item>();
+	static ArrayList<Item>  Items = ItemRepo.LoadAllItems();
 	public static User u = new User();
 	public static void main(String[] args) {
 		ServerFunctions server = ServerFunctions.getInstance();

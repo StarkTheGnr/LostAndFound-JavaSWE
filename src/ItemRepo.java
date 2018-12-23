@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class ItemRepo
 {
@@ -38,5 +39,9 @@ public class ItemRepo
 			}
 		}
 		return false;
+	}
+	public static ArrayList<Item> LoadAllItems()
+	{
+		 return DatabaseHandler.getInstance().itemDB;
 	}
 }
