@@ -14,7 +14,7 @@ public class ItemService
 		else
 			return false;
 	}
-	public Item CreatItem(String desc, 	String img, Location loc, String cat, User u)
+	public Item CreateItem(String desc, 	String img, Location loc, String cat, User u)
 	{
 		Item temp = new Item();
 		temp.setDescription(desc);
