@@ -44,12 +44,11 @@ public class ServerFunctions
 	}
 	public boolean Accept(Item item)
 	{
-		ItemRepo.RemoveItem(item.id);
-		return Viewer.EndConversation();
+		return ItemRepo.RemoveItem(item.id);
 	}
 	public boolean Decline(Item item)
 	{
-		return Viewer.EndConversation();
+		return true;
 	}
 	public int CreateConversation(Item item, User u)
 	{
