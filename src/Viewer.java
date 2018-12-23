@@ -34,9 +34,44 @@ public class Viewer
 						input.nextLine();
 						if (answer == 1)
 						{
-							ShowItems();
-							System.out.println("Please enter the item's number");
+							System.out.println("Please enter 1 to sort by category, 2 to sort by location or 3 to sort by Title else 0");
 							int n = input.nextInt();
+							if (n == 0)
+							{
+								ShowItems(Items);
+							}
+							else if(n == 1)
+							{
+								input.nextLine();
+								System.out.println("Please enter the category");
+								String cat = input.nextLine();
+								Sorter s = new Sorter();
+								ArrayList<Item>  SortedItems = s.SortByCategory(Items, cat);
+								ShowItems(SortedItems);
+							}
+							else if (n == 2)
+							{
+								Location l = new Location();
+								System.out.print("please enter item location longitude");
+			 					l.longitude = input.nextDouble();
+			 					System.out.print("please enter item location latitude");
+			 					l.latitude = input.nextDouble();
+			 					System.out.print("please enter item location altitude");
+			 					l.altitude = input.nextDouble();
+								Sorter s = new Sorter();
+								ArrayList<Item>  SortedItems = s.SearchByLocation(Items, l);
+								ShowItems(SortedItems);
+							}
+							else if (n== 3)
+							{
+								System.out.println("Please enter the Title");
+								String title = input.nextLine();
+								Sorter s = new Sorter();
+								ArrayList<Item>  SortedItems = s.SearchByTitle(Items, title);
+								ShowItems(SortedItems);
+							}
+							System.out.println("Please enter the item's number");
+							n = input.nextInt();
 							input.nextLine();
 							if (n > Items.size())
 							{
@@ -45,7 +80,7 @@ public class Viewer
 							}
 							else
 							{
-								System.out.println("Please enter 1 to showform and 2 to request item");
+								System.out.println("Please enter 1 to showform");
 								int in = input.nextInt();
 								input.nextLine();
 								if (in  == 1)
@@ -100,7 +135,7 @@ public class Viewer
 		 					l.altitude = input.nextDouble();
 							i.setLocation(l);
 							i.setFoundBy(u);
-							Items.add(i);
+							ItemRepo.SaveItem(i);
 						}
 						else
 						{
@@ -122,16 +157,16 @@ public class Viewer
 		
 	}
 
-	public static boolean ShowItems()
+	public static boolean ShowItems(ArrayList<Item> items)
 	{
-		for (int i = 0; i < Items.size(); i++)
+		for (int i = 0; i < items.size(); i++)
 		{
-			System.out.print("ID: " + Items.get(i).id + " 	");
-			System.out.print("Category: " + Items.get(i).getCategory() + " 	");
-			System.out.print("Image link: " + Items.get(i).getImage() + " 	");
-			System.out.print("Item's user: " + Items.get(i).getFoundBy().getUsername() + " 	");
-			System.out.print("Items's loacation latitude: " + Items.get(i).getLocation().latitude + " , longitude : "
-					+ Items.get(i).getLocation().longitude + " , altitude : " + Items.get(i).getLocation().altitude
+			System.out.print("ID: " + items.get(i).id + " 	");
+			System.out.print("Category: " + items.get(i).getCategory() + " 	");
+			System.out.print("Image link: " + items.get(i).getImage() + " 	");
+			System.out.print("Item's user: " + items.get(i).getFoundBy().getUsername() + " 	");
+			System.out.print("Items's loacation latitude: " + items.get(i).getLocation().latitude + " , longitude : "
+					+ items.get(i).getLocation().longitude + " , altitude : " + items.get(i).getLocation().altitude
 					+ "\n");
 
 		}
@@ -152,14 +187,16 @@ public class Viewer
 			temp.to = itemuser;
 			System.out.println("finder");
 			temp.body = input.nextLine();
+			MessageRepo.SaveMessage(temp);
 			c.messages.add(temp);
 			System.out.println("owner");
 			temp.from = itemuser;
 			temp.to = u;
 			temp.body = input.nextLine();
+			MessageRepo.SaveMessage(temp);
 			c.messages.add(temp);
 			System.out.println("Please enter end to end");
-			con = input.nextLine();
+			con = input.nextLine(		);
 		}
 		System.out.println("Please enter 1 to accept 0 to decline");
 		return input.nextInt();
