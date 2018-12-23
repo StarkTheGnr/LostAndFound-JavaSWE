@@ -15,11 +15,7 @@ public class ServerFunctions
 	public boolean Validate(String username, String password)
 	{
 		if(username.length() > 18 || username.length() < 3 || password.length() > 18 || password.length() < 3)
-			return false;
-		
-		if(!UserRepo.CheckIfReg(username, password))
-			return false;
-		
+			return false;	
 		return true;
 	}
 	
@@ -54,9 +50,9 @@ public class ServerFunctions
 	{
 		return Viewer.EndConversation();
 	}
-	public void CreateConversation(Item item, User u)
+	public int CreateConversation(Item item, User u)
 	{
-		Viewer.CreateConversation(item.getFoundBy(), u);
+		return Viewer.CreateConversation(item.getFoundBy(), u);
 	}
 	
 }

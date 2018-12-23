@@ -1,7 +1,7 @@
 public class Form
 {
 	String name;
-	Location location;
+	Location location = new Location();
 	String proof;
 	Item item;
 	
